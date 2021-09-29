@@ -57,9 +57,18 @@ subprojects {  // 프로젝트의 하위 폴더 생성
         useJUnitPlatform()
     }
 }
+["comp", "test", "web"].each {
+    def subProjectDir = new File(projectDir, it)
+    subProjectDir.eachDir {dir->
+        def projectName = ":${it}-${dir.name}"
+        project(projectName){
+            bootJar.enabled(false)
+            jar.enabled(true)
+        }
+    }
+}
 
-
-["server","test"].each {
+["server"].each {
     def subProjectDir = new File(projectDir, it)
     subProjectDir.eachDir {dir->
         def projectName = ":${it}-${dir.name}"
