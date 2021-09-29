@@ -1,0 +1,7 @@
+
+
+dependencies {
+    implementation("$boot:spring-boot-starter-data-jpa")
+    testImplementation("com.h2database:h2") //테스트를 위한 임베디드 디비
+}
+
