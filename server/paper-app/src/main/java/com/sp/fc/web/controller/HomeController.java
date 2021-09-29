@@ -26,4 +26,9 @@ public class HomeController {
         model.addAttribute("site", site);
         return "redirect:/"+site;
     }
+
+    @GetMapping("/signup") // /login?site=teacher 처럼 분기하기
+    public String singUp(@RequestParam String site) {
+        return "redirect:/"+site+"/signup";
+    }
 }

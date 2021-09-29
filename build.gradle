@@ -35,13 +35,13 @@ subprojects {  // 프로젝트의 하위 폴더 생성
     }
 
     configurations {
-//        developmentOnly
+        developmentOnly
         runtimeClasspath {
             extendsFrom developmentOnly
         }
     }
     dependencies {
-//        developmentOnly("$boot:spring-boot-devtools") 초반에는 로그인에 문제생김
+        developmentOnly("$boot:spring-boot-devtools") //초반에는 로그인에 문제생김
         implementation "$boot:spring-boot-starter-security"
         implementation 'com.fasterxml.jackson.core:jackson-annotations' // json ignore 사용
 
